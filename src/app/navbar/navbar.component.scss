@@ -1,0 +1,42 @@
+//src/app/navbar/navbar.component.scss
+
+@use '@angular/material' as mat;
+
+$indicator-color: #FFA500;
+$nav-text-color: #005AFF;
+$ripple-color: #FFA500;
+$title-color: #FFA500;
+
+nav {
+  font-size: 18px;
+  margin-bottom: 16px;
+
+  @include mat.tabs-overrides((
+    divider-color: transparent,
+  ));
+
+  .nav-item {
+    @include mat.tabs-overrides((
+      active-indicator-color: $indicator-color,
+      active-ripple-color: $ripple-color,
+      inactive-ripple-color: $ripple-color,
+      active-focus-indicator-color: $indicator-color,
+      active-hover-indicator-color: $indicator-color,
+      active-indicator-height: 2.5px,
+      inactive-label-text-color: $nav-text-color,
+      active-label-text-color: $nav-text-color,
+      inactive-focus-label-text-color: $nav-text-color,
+      inactive-hover-label-text-color: $nav-text-color,
+      active-focus-label-text-color: $nav-text-color,
+      active-hover-label-text-color: $nav-text-color,
+    ));
+  }
+
+  .nav-title {
+    color: $title-color;
+    pointer-events: none;
+    cursor: default;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
