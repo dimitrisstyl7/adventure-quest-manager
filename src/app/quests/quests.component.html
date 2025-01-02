@@ -1,0 +1,9 @@
+<!--src/app/quests/quests.component.html-->
+
+<div class="container">
+  @for (quest of quests; track quest.id) {
+    <div>
+      <app-quest-card [inputSignal]="quest"></app-quest-card>
+    </div>
+  }
+</div>

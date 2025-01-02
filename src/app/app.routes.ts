@@ -1,3 +1,8 @@
-import { Routes } from '@angular/router';
+// src/app/app.routes.ts
 
-export const routes: Routes = [];
+import {Routes} from '@angular/router';
+import {QuestsComponent} from './quests/quests.component';
+
+export const routes: Routes = [
+  {path: 'quests', component: QuestsComponent},
+];
