@@ -2,12 +2,13 @@
 
 @use '@angular/material' as mat;
 
+$body-bg-color: rgba(gray, 0.2);
 $supporting-text-color: #F2F0F4;
 $tooltip-bg-color: gray;
 
 body {
   font-family: cursive, Roboto, sans-serif;
-  background-color: rgba(gray, 0.2);
+  background-color: $body-bg-color;
 }
 
 @include mat.tooltip-overrides((

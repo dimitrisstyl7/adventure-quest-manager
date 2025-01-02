@@ -1,7 +1,7 @@
 <!--src/app/navbar/navbar.component.html-->
 
-<nav mat-tab-nav-bar mat-stretch-tabs="false" [tabPanel]="tabPanel">
-  <a mat-tab-link class="nav-title">{{ title }}</a>
+<nav [tabPanel]="tabPanel" mat-stretch-tabs="false" mat-tab-nav-bar>
+  <a class="nav-title" mat-tab-link>{{ title }}</a>
   @for (link of links; track link) {
     <a mat-tab-link class="nav-item" routerLink="{{ link }}"
        (click)="activeLink = link" [active]="activeLink == link">
