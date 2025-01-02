@@ -1,0 +1,76 @@
+//src/app/quest-card/quest-card.component.scss
+
+@use '@angular/material' as mat;
+
+$card-bg-color: #d6c7fc;
+$card-border-color: #FFA500;
+$edit-button-color: #005AFF;
+$done-button-color: #069506;
+$delete-button-color: red;
+
+.card {
+  width: 300px;
+  border-radius: 24px;
+  margin: 16px;
+  border-width: 2.5px;
+
+  @include mat.card-overrides((
+    outlined-container-color: $card-bg-color,
+    outlined-outline-color: $card-border-color,
+  ));
+
+  @include mat.fab-overrides((
+    small-container-shape: 12%,
+  ));
+
+  mat-card-title {
+    font-size: 18px;
+  }
+
+  mat-card-subtitle {
+    text-align: left;
+  }
+
+  p {
+    text-align: justify;
+    font-size: 14px;
+  }
+
+  .buttons-container {
+    width: 100%;
+
+    .edit-button {
+      display: inline-block;
+
+      @include mat.fab-overrides((
+        small-foreground-color: $edit-button-color,
+      ));
+    }
+
+    .done-button {
+      display: inline-block;
+      padding: 0 70px;
+
+      @include mat.fab-overrides((
+        small-foreground-color: $done-button-color,
+      ));
+    }
+
+    .delete-button {
+      display: inline-block;
+
+      @include mat.fab-overrides((
+        small-foreground-color: $delete-button-color,
+      ));
+    }
+
+    button {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+
+
+

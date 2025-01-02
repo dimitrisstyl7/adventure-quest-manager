@@ -1,6 +1,19 @@
 //src/styles.scss
 
+@use '@angular/material' as mat;
+
+$supporting-text-color: #F2F0F4;
+$tooltip-bg-color: gray;
+
 body {
   font-family: cursive, Roboto, sans-serif;
   background-color: rgba(gray, 0.2);
 }
+
+@include mat.tooltip-overrides((
+  container-color: $tooltip-bg-color,
+  supporting-text-color: $supporting-text-color,
+  supporting-text-weight: normal,
+  supporting-text-size: 9pt,
+  container-shape: 4px,
+));
