@@ -2,11 +2,18 @@
 
 @use '@angular/material' as mat;
 
-$body-bg-color: rgba(gray, 0.2);
+$body-bg-color: #e2e2e2;
 $supporting-text-color: #F2F0F4;
 $tooltip-bg-color: gray;
 $snackBar-bg-color: #2f3033;
 $snackBar-text-color: #f0eef2;
+$dialog-bg-color: #fbe0c2;
+
+html {
+  --mat-option-label-text-color: #63594d;
+  --mat-option-hover-state-layer-color: white;
+  --mat-select-panel-background-color: #fbe0c2;
+}
 
 body {
   font-family: cursive, Roboto, sans-serif;
@@ -27,4 +34,12 @@ body {
   supporting-text-color: $snackBar-text-color,
   supporting-text-size: 14px,
   supporting-text-line-height: 15px,
+));
+
+@include mat.dialog-overrides((
+  container-shape: 36px,
+  container-color: $dialog-bg-color,
+  subhead-size: 18px,
+  subhead-weight: bold,
+  supporting-text-size: 16px,
 ));

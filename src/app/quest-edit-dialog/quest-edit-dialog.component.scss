@@ -1,0 +1,32 @@
+//src/app/quest-edit-dialog/quest-edit-dialog.component.scss
+
+@use '@angular/material' as mat;
+
+$save-button-color: #005AFF;
+$cancel-button-color: red;
+
+.dialog-container {
+  .cancel-button {
+    @include mat.button-overrides((
+      text-label-text-color: $cancel-button-color,
+    ));
+  }
+
+  .save-button {
+    @include mat.button-overrides((
+      text-label-text-color: $save-button-color,
+    ));
+  }
+
+  mat-dialog-content div {
+    display: grid;
+
+    mat-label {
+      color: black;
+    }
+
+    textarea {
+      min-height: 50px;
+    }
+  }
+}

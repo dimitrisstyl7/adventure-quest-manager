@@ -1,0 +1,29 @@
+<!--src/app/quest-edit-dialog/quest-edit-dialog.component.html-->
+
+<div class="dialog-container">
+  <h2 mat-dialog-title>Edit Quest</h2>
+  <mat-dialog-content>
+    <div>
+      <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input [(ngModel)]="quest.title" matInput>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Difficulty</mat-label>
+        <mat-select [(value)]="quest.difficulty">
+          @for (difficulty of Object.values(Difficulty); track difficulty) {
+            <mat-option [value]="difficulty">{{ difficulty }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <textarea [(ngModel)]="quest.description" matInput></textarea>
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button class="cancel-button" mat-button mat-dialog-close>Cancel</button>
+    <button (click)="saveQuest()" [mat-dialog-close]="true" class="save-button" mat-button>Save</button>
+  </mat-dialog-actions>
+</div>
