@@ -1,6 +1,7 @@
 // src/app/quest.ts
 
 import {Difficulty} from './difficulty';
+import {Status} from './status';
 
 export interface Quest {
 
@@ -8,5 +9,6 @@ export interface Quest {
   title: string;
   description: string;
   difficulty: Difficulty;
+  status: Status;
 
 }
