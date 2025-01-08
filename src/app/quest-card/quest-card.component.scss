@@ -2,21 +2,22 @@
 
 @use '@angular/material' as mat;
 
-$card-bg-color: #d6c7fc;
-$card-border-color: #FFA500;
+$card-bg-color: #fbe0c2;
+$card-title-color: #0081A7;
+$card-text-color: #00AFB9;
 $edit-button-color: #005AFF;
 $done-button-color: #069506;
 $delete-button-color: red;
+$completed-text-color: #069506;
 
 .card {
   width: 300px;
-  border-radius: 24px;
   margin: 16px;
-  border-width: 2.5px;
+  border-radius: 36px;
+  border-width: 1.5px;
 
   @include mat.card-overrides((
     outlined-container-color: $card-bg-color,
-    outlined-outline-color: $card-border-color,
   ));
 
   @include mat.fab-overrides((
@@ -25,15 +26,17 @@ $delete-button-color: red;
 
   mat-card-title {
     font-size: 18px;
+    font-weight: bold;
+    text-align: left;
   }
 
   mat-card-subtitle {
     text-align: left;
   }
 
-  p {
-    text-align: justify;
+  mat-card-content p {
     font-size: 14px;
+    text-align: justify;
   }
 
   .buttons-container {
@@ -68,9 +71,9 @@ $delete-button-color: red;
       width: 30px;
       height: 30px;
     }
+
+    span {
+      color: $completed-text-color;
+    }
   }
 }
-
-
-
-

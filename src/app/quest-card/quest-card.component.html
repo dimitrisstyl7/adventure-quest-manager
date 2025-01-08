@@ -4,7 +4,7 @@
   <mat-card class="card" appearance="outlined">
     <mat-card-header>
       <mat-card-title-group>
-        <mat-card-title><b>{{ quest.title }}</b></mat-card-title>
+        <mat-card-title>{{ quest.title }}</mat-card-title>
         <mat-card-subtitle><sub><i><u>Difficulty:</u> {{ quest.difficulty }}</i></sub></mat-card-subtitle>
       </mat-card-title-group>
     </mat-card-header>
@@ -13,24 +13,28 @@
     </mat-card-content>
     <mat-card-actions>
       <div class="buttons-container">
-        <div class="edit-button">
-          <button mat-mini-fab matTooltip="edit" matTooltipPosition="below"
-                  [attr.aria-label]='"Edit \"" + quest.title + "\" quest icon button"'>
-            <mat-icon>edit</mat-icon>
-          </button>
-        </div>
-        <div class="done-button">
-          <button mat-mini-fab matTooltip="complete" matTooltipPosition="below"
-                  [attr.aria-label]='"Mark \"" + quest.title + "\" quest as completed icon button"'>
-            <mat-icon>done</mat-icon>
-          </button>
-        </div>
-        <div class="delete-button">
-          <button mat-mini-fab matTooltip="delete" matTooltipPosition="below"
-                  [attr.aria-label]='"Delete \"" + quest.title + "\" quest icon button"'>
-            <mat-icon>delete_forever</mat-icon>
-          </button>
-        </div>
+        @if (quest.status == Status.PENDING) {
+          <div class="edit-button">
+            <button mat-mini-fab matTooltip="edit" matTooltipPosition="below" (click)="openEditDialog(quest)"
+                    [attr.aria-label]='"Edit \"" + quest.title + "\" quest icon button"'>
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+          <div class="done-button">
+            <button mat-mini-fab matTooltip="complete" matTooltipPosition="below" (click)="completeQuest(quest.id)"
+                    [attr.aria-label]='"Mark \"" + quest.title + "\" quest as completed icon button"'>
+              <mat-icon>done</mat-icon>
+            </button>
+          </div>
+          <div class="delete-button">
+            <button mat-mini-fab matTooltip="delete" matTooltipPosition="below" (click)="deleteQuest(quest.id)"
+                    [attr.aria-label]='"Delete \"" + quest.title + "\" quest icon button"'>
+              <mat-icon>delete_forever</mat-icon>
+            </button>
+          </div>
+        } @else {
+          <span>COMPLETED</span>
+        }
       </div>
     </mat-card-actions>
   </mat-card>
