@@ -1,12 +1,14 @@
 <!--src/app/navbar/navbar.component.html-->
 
-<nav [tabPanel]="tabPanel" mat-stretch-tabs="false" mat-tab-nav-bar>
-  <a class="nav-title" mat-tab-link>{{ title }}</a>
+<nav [tabPanel]="tabPanel" mat-align-tabs="center" mat-stretch-tabs="false" mat-tab-nav-bar>
+  <h2><a class="nav-title" mat-tab-link>{{ title }}</a></h2>
   @for (link of links; track link) {
-    <a mat-tab-link class="nav-item" routerLink="{{ link }}"
-       (click)="activeLink = link" [active]="activeLink == link">
-      {{ link | titlecase }}
-    </a>
+    <h3>
+      <a mat-tab-link class="nav-item" routerLink="{{ link }}"
+         (click)="activeLink = link" [active]="activeLink == link">
+        {{ link | titlecase }}
+      </a>
+    </h3>
   }
 </nav>
 <mat-tab-nav-panel #tabPanel>

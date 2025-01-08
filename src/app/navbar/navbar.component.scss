@@ -2,10 +2,10 @@
 
 @use '@angular/material' as mat;
 
-$indicator-color: #FFA500;
+$indicator-color: #f1ac46;
 $nav-text-color: #005AFF;
-$ripple-color: #FFA500;
-$title-color: #FFA500;
+$ripple-color: #f1ac46;
+$title-color: #f1ac46;
 
 nav {
   font-size: 18px;
@@ -14,6 +14,10 @@ nav {
   @include mat.tabs-overrides((
     divider-color: transparent,
   ));
+
+  h2, h3 {
+    margin: 10px 0 0 0;
+  }
 
   .nav-item {
     @include mat.tabs-overrides((
@@ -36,7 +40,5 @@ nav {
     color: $title-color;
     pointer-events: none;
     cursor: default;
-    font-size: 20px;
-    font-weight: bold;
   }
 }
