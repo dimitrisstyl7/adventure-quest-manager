@@ -12,11 +12,10 @@ The Adventure Quest Manager is a web application designed to help users create, 
 Users can easily add new quests with a title, description, and difficulty level, and they can mark quests as complete or delete them as needed.
 
 ## Features
-- **Create Quests**: Users can input a unique title, description, and difficulty level (Easy, Medium, Hard) for each quest.
+- **Create Quests**: Users can input a title, description, and difficulty level (Easy, Medium, Hard) for each quest.
 - **Manage Quests**: Users can view a list of all created quests, with options to mark them as complete or delete them.
 - **Dynamic User Interface**: The application updates the quest list dynamically without needing to refresh the page.
 - **Status Tracking**: Each quest has a status that indicates whether it is incomplete or complete.
-- ~~**User Feedback**: Alerts are provided for empty fields when creating a quest, ensuring users provide all necessary information.~~
 
 ## Acknowledgments
 This project was developed as part of the "Advanced Programming Full Stack Javascript Frameworks" MSc course at the University of Piraeus. Contributions and feedback are always welcome!
