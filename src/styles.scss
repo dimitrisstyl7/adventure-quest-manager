@@ -5,6 +5,8 @@
 $body-bg-color: rgba(gray, 0.2);
 $supporting-text-color: #F2F0F4;
 $tooltip-bg-color: gray;
+$snackBar-bg-color: #2f3033;
+$snackBar-text-color: #f0eef2;
 
 body {
   font-family: cursive, Roboto, sans-serif;
@@ -17,4 +19,12 @@ body {
   supporting-text-weight: normal,
   supporting-text-size: 9pt,
   container-shape: 4px,
+));
+
+@include mat.snack-bar-overrides((
+  container-shape: 4px,
+  container-color: $snackBar-bg-color,
+  supporting-text-color: $snackBar-text-color,
+  supporting-text-size: 14px,
+  supporting-text-line-height: 15px,
 ));
