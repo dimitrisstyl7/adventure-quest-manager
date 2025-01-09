@@ -17,7 +17,16 @@ Users can easily add new quests with a title, description, and difficulty level,
 - **Dynamic User Interface**: The application updates the quest list dynamically without needing to refresh the page.
 - **Status Tracking**: Each quest has a status that indicates whether it is incomplete or complete.
 
+## Screenshots
+Here's a preview of the Adventure Quest Manager in action:
 
+**Screenshot 1**: A list of quests
+  
+![image](https://github.com/user-attachments/assets/c7825879-0639-4482-9543-f667156dbfe0)
+
+**Screenshot 2**: Quest creation dialog
+
+![image](https://github.com/user-attachments/assets/03298037-ad5b-468e-891e-facc70888c91)
 
 <hr>
 
