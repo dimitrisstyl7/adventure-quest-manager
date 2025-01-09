@@ -42,35 +42,30 @@ $incomplete-button-color: #005AFF;
 
   .buttons-container {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto 16px;
 
     .edit-button {
-      display: inline-block;
-
       @include mat.fab-overrides((
         small-foreground-color: $edit-button-color,
       ));
     }
 
     .complete-button {
-      display: inline-block;
-      padding: 0 70px;
-
       @include mat.fab-overrides((
         small-foreground-color: $complete-button-color,
       ));
     }
 
     .delete-button {
-      display: inline-block;
-
       @include mat.fab-overrides((
         small-foreground-color: $delete-button-color,
       ));
     }
 
     .incomplete-button {
-      display: inline-block;
-
       @include mat.fab-overrides((
         small-foreground-color: $incomplete-button-color,
       ));

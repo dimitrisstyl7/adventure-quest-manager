@@ -34,12 +34,18 @@
             </button>
           </div>
         } @else {
-          <span>COMPLETED</span>
           <div class="incomplete-button">
             <button mat-mini-fab matTooltip="mark as incomplete" matTooltipPosition="below"
                     (click)="markQuestAsIncomplete(quest.id)"
                     [attr.aria-label]='"Mark \"" + quest.title + "\" quest as incomplete icon button"'>
               <mat-icon>settings_backup_restore</mat-icon>
+            </button>
+          </div>
+          <span>COMPLETED</span>
+          <div class="delete-button">
+            <button mat-mini-fab matTooltip="delete" matTooltipPosition="below" (click)="deleteQuest(quest.id)"
+                    [attr.aria-label]='"Delete \"" + quest.title + "\" quest icon button"'>
+              <mat-icon>delete_forever</mat-icon>
             </button>
           </div>
         }
