@@ -117,6 +117,12 @@ export class QuestManagerService {
     });
   }
 
+  isTitleUnique(title: string, id: number): boolean {
+    return this._quests.findIndex(q =>
+      q.title.toLowerCase() === title.toLowerCase() && q.id !== id
+    ) !== -1;
+  }
+
   private sortQuests() {
     const difficultyOrder = [Difficulty.EASY, Difficulty.MEDIUM, Difficulty.HARD];
 
