@@ -13,14 +13,14 @@
     </mat-card-content>
     <mat-card-actions>
       <div class="buttons-container">
-        @if (quest.status == Status.PENDING) {
+        @if (quest.status == Status.INCOMPLETE) {
           <div class="edit-button">
             <button mat-mini-fab matTooltip="edit" matTooltipPosition="below" (click)="openEditDialog(quest)"
                     [attr.aria-label]='"Edit \"" + quest.title + "\" quest icon button"'>
               <mat-icon>edit</mat-icon>
             </button>
           </div>
-          <div class="done-button">
+          <div class="complete-button">
             <button mat-mini-fab matTooltip="complete" matTooltipPosition="below" (click)="completeQuest(quest.id)"
                     [attr.aria-label]='"Mark \"" + quest.title + "\" quest as completed icon button"'>
               <mat-icon>done</mat-icon>

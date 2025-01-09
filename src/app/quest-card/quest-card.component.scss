@@ -6,9 +6,9 @@ $card-bg-color: #fbe0c2;
 $card-title-color: #0081A7;
 $card-text-color: #00AFB9;
 $edit-button-color: #005AFF;
-$done-button-color: #069506;
-$delete-button-color: red;
+$complete-button-color: #069506;
 $completed-text-color: #069506;
+$delete-button-color: red;
 
 .card {
   width: 300px;
@@ -50,12 +50,12 @@ $completed-text-color: #069506;
       ));
     }
 
-    .done-button {
+    .complete-button {
       display: inline-block;
       padding: 0 70px;
 
       @include mat.fab-overrides((
-        small-foreground-color: $done-button-color,
+        small-foreground-color: $complete-button-color,
       ));
     }
 
