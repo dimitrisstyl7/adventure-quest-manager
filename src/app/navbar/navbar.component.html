@@ -2,6 +2,9 @@
 
 <nav [tabPanel]="tabPanel" mat-align-tabs="center" mat-stretch-tabs="false" mat-tab-nav-bar>
   <h2><a class="nav-title" mat-tab-link>{{ title }}</a></h2>
+  <h3>
+    <a (click)="openNewQuestDialog()" class="nav-item" mat-tab-link>New Quest</a>
+  </h3>
   @for (link of links; track link) {
     <h3>
       <a mat-tab-link class="nav-item" routerLink="{{ link }}"
