@@ -1,31 +1,32 @@
 <!--src/app/shared/quest-dialog/quest-dialog.component.html-->
 
-<div class="dialog-container">
-  <h2 mat-dialog-title>{{ dialogData.heading }}</h2>
-  <mat-dialog-content>
-    <div>
-      <mat-form-field>
-        <mat-label>Title <span class="required">*</span></mat-label>
-        <input [(ngModel)]="dialogData.quest.title" matInput>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Difficulty <span class="required">*</span></mat-label>
-        <mat-select [(value)]="dialogData.quest.difficulty">
-          @for (difficulty of Object.values(Difficulty); track difficulty) {
-            <mat-option [value]="difficulty">{{ difficulty }}</mat-option>
-          }
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Description (Optional)</mat-label>
-        <textarea [(ngModel)]="dialogData.quest.description" matInput></textarea>
-      </mat-form-field>
-    </div>
-  </mat-dialog-content>
-  <mat-dialog-actions align="end">
-    <button class="cancel-button" mat-button mat-dialog-close>Cancel</button>
-    <button (click)="saveQuest()" [mat-dialog-close]="true" class="save-button"
-            mat-button>{{ dialogData.positiveButtonText }}
-    </button>
-  </mat-dialog-actions>
-</div>
+<h2 mat-dialog-title>{{ dialogData.heading }}</h2>
+<mat-dialog-content>
+  <div>
+    <mat-form-field [class.error]="titleError">
+      <mat-label>Title <span class="required">*</span></mat-label>
+      <input (ngModelChange)="onTitleChange($event)" [(ngModel)]="dialogData.quest.title" matInput>
+      <mat-hint *ngIf="titleError">{{ titleError }}</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Difficulty</mat-label>
+      <mat-select [(value)]="dialogData.quest.difficulty">
+        @for (difficulty of Object.values(Difficulty); track difficulty) {
+          <mat-option [value]="difficulty">{{ difficulty }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field [class.error]="descriptionError">
+      <mat-label>Description <span class="required">*</span></mat-label>
+      <textarea [(ngModel)]="dialogData.quest.description" matInput rows="1"></textarea>
+      <mat-hint *ngIf="descriptionError">{{ descriptionError }}</mat-hint>
+    </mat-form-field>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button class="cancel-button" mat-button mat-dialog-close>Cancel</button>
+  <button (click)="saveQuest()" *ngIf="!descriptionError && !titleError" [mat-dialog-close]="true"
+          class="save-button"
+          mat-button>{{ dialogData.positiveButtonText }}
+  </button>
+</mat-dialog-actions>

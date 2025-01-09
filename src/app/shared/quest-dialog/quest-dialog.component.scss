@@ -4,33 +4,37 @@
 
 $save-button-color: #005AFF;
 $cancel-button-color: #6b6b6b;
+$error-color: red;
 
-.dialog-container {
-  .cancel-button {
-    @include mat.button-overrides((
-      text-label-text-color: $cancel-button-color,
-    ));
+.cancel-button {
+  @include mat.button-overrides((
+    text-label-text-color: $cancel-button-color,
+  ));
+}
+
+.save-button {
+  @include mat.button-overrides((
+    text-label-text-color: $save-button-color,
+  ));
+}
+
+mat-dialog-content div {
+  display: grid;
+
+  mat-label {
+    color: black;
   }
 
-  .save-button {
-    @include mat.button-overrides((
-      text-label-text-color: $save-button-color,
-    ));
+  mat-hint {
+    color: $error-color;
+    font-size: 12px;
   }
 
-  mat-dialog-content div {
-    display: grid;
+  textarea {
+    min-height: 25px;
+  }
 
-    mat-label {
-      color: black;
-    }
-
-    textarea {
-      min-height: 25px;
-    }
-
-    .required {
-      color: red;
-    }
+  .required, .error {
+    color: $error-color;
   }
 }
