@@ -17,11 +17,7 @@ Users can easily add new quests with a title, description, and difficulty level,
 - **Dynamic User Interface**: The application updates the quest list dynamically without needing to refresh the page.
 - **Status Tracking**: Each quest has a status that indicates whether it is incomplete or complete.
 
-## Acknowledgments
-This project was developed as part of the "Advanced Programming Full Stack Javascript Frameworks" MSc course at the University of Piraeus. Contributions and feedback are always welcome!
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 <hr>
 
@@ -76,3 +72,9 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 
 ## Additional Resources
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Acknowledgments
+This project was developed as part of the "Advanced Programming Full Stack Javascript Frameworks" MSc course at the University of Piraeus. Contributions and feedback are always welcome!
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
