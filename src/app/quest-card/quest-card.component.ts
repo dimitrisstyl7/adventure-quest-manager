@@ -4,14 +4,13 @@ import {Component, CUSTOM_ELEMENTS_SCHEMA, input, OnInit} from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import {MatSnackBar} from '@angular/material/snack-bar';
 import {Quest} from '../quest';
 import {MatTooltip} from '@angular/material/tooltip';
-import {MatDialog} from '@angular/material/dialog';
-import {QuestEditDialogComponent} from '../quest-edit-dialog/quest-edit-dialog.component';
 import {QuestManagerService} from '../quest-manager.service';
 import {Status} from '../status';
-import {SnackBarComponent} from '../snack-bar/snack-bar.component';
+import {DialogService} from '../dialog.service';
+import {DialogData} from '../dialog-data';
+import {SnackBarService} from '../snack-bar.service';
 
 @Component({
   selector: 'app-quest-card',
@@ -26,8 +25,8 @@ export class QuestCardComponent implements OnInit {
   inputSignal = input<Quest>();
   protected readonly Status = Status;
 
-  constructor(private readonly dialog: MatDialog,
-              private readonly snackBar: MatSnackBar,
+  constructor(private readonly dialogService: DialogService,
+              private readonly snackBarService: SnackBarService,
               private readonly questManagerService: QuestManagerService) {
   }
 
@@ -35,45 +34,34 @@ export class QuestCardComponent implements OnInit {
     this.quest = this.inputSignal();
   }
 
-  openEditDialog(quest: Quest) {
-    const buttonElement = document.activeElement as HTMLElement; // Get the currently focused element
-    buttonElement.blur();
+  openEditQuestDialog(quest: Quest) {
+    const dialogData: DialogData = {
+      heading: 'Edit Quest',
+      positiveButtonText: 'Save',
+      quest: {...quest}
+    };
 
-    const dialogRef = this.dialog.open(QuestEditDialogComponent, {
-      data: {...quest},
-      position: {top: '70px'},
-      enterAnimationDuration: 100,
-      exitAnimationDuration: 150,
-      width: '500px',
-      maxWidth: '500px',
-      minWidth: '300px',
-      height: 'auto',
-      minHeight: '100px',
-    });
-
-    dialogRef.afterClosed().subscribe((quest: Quest | undefined) => {
+    this.dialogService.openDialog(dialogData, quest => {
       if (!quest) return;
       this.quest = quest;
       this.questManagerService.updateQuest(quest);
-      this.openSnackBar("Quest saved successfully");
+      this.snackBarService.openSnackBar('Quest saved successfully');
     });
-  }
-
-  completeQuest(id: number) {
-    this.questManagerService.completeQuest(id);
-    this.openSnackBar("Quest marked as completed");
   }
 
   deleteQuest(id: number) {
     this.questManagerService.deleteQuest(id);
-    this.openSnackBar("Quest deleted successfully");
+    this.snackBarService.openSnackBar('Quest deleted successfully');
   }
 
-  private openSnackBar(message: string) {
-    this.snackBar.openFromComponent(SnackBarComponent, {
-      duration: 1800,
-      data: message,
-    })
+  markQuestAsCompleted(id: number) {
+    this.questManagerService.changeQuestStatus(id, Status.COMPLETED);
+    this.snackBarService.openSnackBar('Quest marked as completed');
+  }
+
+  markQuestAsIncomplete(id: number) {
+    this.questManagerService.changeQuestStatus(id, Status.INCOMPLETE);
+    this.snackBarService.openSnackBar('Quest marked as incomplete');
   }
 
 }

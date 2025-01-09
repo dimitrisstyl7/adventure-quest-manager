@@ -9,6 +9,7 @@ $edit-button-color: #005AFF;
 $complete-button-color: #069506;
 $completed-text-color: #069506;
 $delete-button-color: red;
+$incomplete-button-color: #005AFF;
 
 .card {
   width: 300px;
@@ -64,6 +65,14 @@ $delete-button-color: red;
 
       @include mat.fab-overrides((
         small-foreground-color: $delete-button-color,
+      ));
+    }
+
+    .incomplete-button {
+      display: inline-block;
+
+      @include mat.fab-overrides((
+        small-foreground-color: $incomplete-button-color,
       ));
     }
 

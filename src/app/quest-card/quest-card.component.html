@@ -15,14 +15,15 @@
       <div class="buttons-container">
         @if (quest.status == Status.INCOMPLETE) {
           <div class="edit-button">
-            <button mat-mini-fab matTooltip="edit" matTooltipPosition="below" (click)="openEditDialog(quest)"
+            <button mat-mini-fab matTooltip="edit" matTooltipPosition="below" (click)="openEditQuestDialog(quest)"
                     [attr.aria-label]='"Edit \"" + quest.title + "\" quest icon button"'>
               <mat-icon>edit</mat-icon>
             </button>
           </div>
           <div class="complete-button">
-            <button mat-mini-fab matTooltip="complete" matTooltipPosition="below" (click)="completeQuest(quest.id)"
-                    [attr.aria-label]='"Mark \"" + quest.title + "\" quest as completed icon button"'>
+            <button mat-mini-fab matTooltip="mark as complete" matTooltipPosition="below"
+                    (click)="markQuestAsCompleted(quest.id)"
+                    [attr.aria-label]='"Mark \"" + quest.title + "\" quest as complete icon button"'>
               <mat-icon>done</mat-icon>
             </button>
           </div>
@@ -34,6 +35,13 @@
           </div>
         } @else {
           <span>COMPLETED</span>
+          <div class="incomplete-button">
+            <button mat-mini-fab matTooltip="mark as incomplete" matTooltipPosition="below"
+                    (click)="markQuestAsIncomplete(quest.id)"
+                    [attr.aria-label]='"Mark \"" + quest.title + "\" quest as incomplete icon button"'>
+              <mat-icon>settings_backup_restore</mat-icon>
+            </button>
+          </div>
         }
       </div>
     </mat-card-actions>
