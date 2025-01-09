@@ -1,4 +1,6 @@
-import {Quest} from './quest';
+// src/app/shared/quest-dialog/dialog-data.ts
+
+import {Quest} from '../../core/models/quest';
 
 export interface DialogData {
 

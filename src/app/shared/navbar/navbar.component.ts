@@ -1,15 +1,15 @@
-// src/app/navbar/navbar.component.ts
+// src/app/shared/navbar/navbar.component.ts
 
 import {Component} from '@angular/core';
 import {MatTabsModule} from '@angular/material/tabs';
 import {RouterLink, RouterOutlet} from '@angular/router';
 import {TitleCasePipe} from '@angular/common';
-import {DialogData} from '../dialog-data';
-import {Difficulty} from '../difficulty';
-import {Status} from '../status';
-import {DialogService} from '../dialog.service';
-import {QuestManagerService} from '../quest-manager.service';
-import {SnackBarService} from '../snack-bar.service';
+import {DialogData} from '../quest-dialog/dialog-data';
+import {Difficulty} from '../../core/models/difficulty';
+import {Status} from '../../core/models/status';
+import {QuestDialogService} from '../quest-dialog/quest-dialog.service';
+import {QuestManagerService} from '../../core/services/quest-manager.service';
+import {SnackBarService} from '../snack-bar/snack-bar.service';
 
 @Component({
   selector: 'app-navbar',
@@ -24,7 +24,7 @@ export class NavbarComponent {
   activeLink = this.links[0];
 
 
-  constructor(private readonly dialogService: DialogService,
+  constructor(private readonly dialogService: QuestDialogService,
               private readonly snackBarService: SnackBarService,
               private readonly questManagerService: QuestManagerService) {
   }

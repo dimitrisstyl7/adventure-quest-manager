@@ -1,4 +1,4 @@
-// src/app/quest.ts
+// src/app/core/models/quest.ts
 
 import {Difficulty} from './difficulty';
 import {Status} from './status';

@@ -1,4 +1,4 @@
-// src/app/snack-bar/snack-bar.component.ts
+// src/app/shared/snack-bar/snack-bar.component.ts
 
 import {Component, inject} from '@angular/core';
 import {MAT_SNACK_BAR_DATA} from '@angular/material/snack-bar';

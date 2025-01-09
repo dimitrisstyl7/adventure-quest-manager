@@ -1,7 +1,9 @@
+// src/app/core/services/quest-manager.service.ts
+
 import {Injectable} from '@angular/core';
-import {Quest} from './quest';
-import {Difficulty} from './difficulty';
-import {Status} from './status';
+import {Quest} from '../models/quest';
+import {Difficulty} from '../models/difficulty';
+import {Status} from '../models/status';
 
 @Injectable({
   providedIn: 'root'

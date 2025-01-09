@@ -1,4 +1,4 @@
-// src/app/difficulty.ts
+// src/app/core/models/difficulty.ts
 
 export enum Difficulty {
 

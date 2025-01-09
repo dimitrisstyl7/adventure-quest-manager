@@ -1,5 +1,7 @@
+// src/app/shared/snack-bar/snack-bar.service.ts
+
 import {Injectable} from '@angular/core';
-import {SnackBarComponent} from './snack-bar/snack-bar.component';
+import {SnackBarComponent} from './snack-bar.component';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Injectable({

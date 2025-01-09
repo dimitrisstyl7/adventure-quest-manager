@@ -1,9 +1,9 @@
 // src/app/quests/quests.component.ts
 
 import {Component} from '@angular/core';
-import {QuestCardComponent} from '../quest-card/quest-card.component';
-import {QuestManagerService} from '../quest-manager.service';
-import {Quest} from '../quest';
+import {QuestCardComponent} from './quest-card/quest-card.component';
+import {QuestManagerService} from '../../core/services/quest-manager.service';
+import {Quest} from '../../core/models/quest';
 
 @Component({
   selector: 'app-quests',

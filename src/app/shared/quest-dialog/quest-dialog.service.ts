@@ -1,13 +1,15 @@
+// src/app/shared/quest-dialog/quest-dialog.service.ts
+
 import {Injectable} from '@angular/core';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
-import {QuestDialogComponent} from './quest-dialog/quest-dialog.component';
+import {QuestDialogComponent} from './quest-dialog.component';
 import {DialogData} from './dialog-data';
-import {Quest} from './quest';
+import {Quest} from '../../core/models/quest';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DialogService {
+export class QuestDialogService {
 
   constructor(private readonly dialog: MatDialog,) {
   }

@@ -4,13 +4,13 @@ import {Component, CUSTOM_ELEMENTS_SCHEMA, input, OnInit} from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import {Quest} from '../quest';
+import {Quest} from '../../../core/models/quest';
 import {MatTooltip} from '@angular/material/tooltip';
-import {QuestManagerService} from '../quest-manager.service';
-import {Status} from '../status';
-import {DialogService} from '../dialog.service';
-import {DialogData} from '../dialog-data';
-import {SnackBarService} from '../snack-bar.service';
+import {QuestManagerService} from '../../../core/services/quest-manager.service';
+import {Status} from '../../../core/models/status';
+import {QuestDialogService} from '../../../shared/quest-dialog/quest-dialog.service';
+import {DialogData} from '../../../shared/quest-dialog/dialog-data';
+import {SnackBarService} from '../../../shared/snack-bar/snack-bar.service';
 
 @Component({
   selector: 'app-quest-card',
@@ -25,7 +25,7 @@ export class QuestCardComponent implements OnInit {
   inputSignal = input<Quest>();
   protected readonly Status = Status;
 
-  constructor(private readonly dialogService: DialogService,
+  constructor(private readonly dialogService: QuestDialogService,
               private readonly snackBarService: SnackBarService,
               private readonly questManagerService: QuestManagerService) {
   }

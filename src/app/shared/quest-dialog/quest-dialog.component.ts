@@ -1,14 +1,14 @@
-// src/app/quest-dialog/quest-dialog.component.ts
+// src/app/shared/quest-dialog/quest-dialog.component.ts
 
 import {Component, inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
-import {Difficulty} from '../difficulty';
+import {Difficulty} from '../../core/models/difficulty';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {FormsModule} from '@angular/forms';
-import {DialogData} from '../dialog-data';
+import {DialogData} from './dialog-data';
 
 @Component({
   selector: 'app-quest-dialog',
