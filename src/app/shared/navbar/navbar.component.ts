@@ -19,9 +19,9 @@ import {SnackBarService} from '../snack-bar/snack-bar.service';
 })
 export class NavbarComponent {
 
-  readonly title = 'Adventure Quest Manager';
-  readonly links = ['quests', 'about'];
-  activeLink = this.links[0];
+  protected readonly title = 'Adventure Quest Manager';
+  protected readonly links = ['quests', 'about'];
+  protected activeLink = this.links[0];
 
 
   constructor(private readonly dialogService: QuestDialogService,
@@ -29,7 +29,7 @@ export class NavbarComponent {
               private readonly questManagerService: QuestManagerService) {
   }
 
-  openNewQuestDialog() {
+  protected openNewQuestDialog() {
     const dialogData: DialogData = {
       heading: 'New Quest',
       positiveButtonText: 'Create',

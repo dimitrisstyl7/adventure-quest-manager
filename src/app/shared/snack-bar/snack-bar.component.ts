@@ -11,6 +11,6 @@ import {MAT_SNACK_BAR_DATA} from '@angular/material/snack-bar';
 })
 export class SnackBarComponent {
 
-  message: string = inject(MAT_SNACK_BAR_DATA);
+  protected message: string = inject(MAT_SNACK_BAR_DATA);
 
 }

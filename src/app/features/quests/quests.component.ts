@@ -16,7 +16,7 @@ export class QuestsComponent {
   constructor(private readonly questManagerService: QuestManagerService) {
   }
 
-  getAllQuests(): Quest[] {
+  protected getAllQuests(): Quest[] {
     return this.questManagerService.quests;
   }
 
