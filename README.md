@@ -18,7 +18,7 @@ Users can easily add new quests with a title, description, and difficulty level,
 - **Status Tracking**: Each quest has a status that indicates whether it is incomplete or complete.
 
 ## Try the App
-Experience the **Adventure Quest Manager** in action! Access the application through the following link:
+Experience the Adventure Quest Manager in action! Access the application through the following link:
 
 [Adventure Quest Manager](https://dimitrisstyl7.github.io/adventure-quest-manager/quests)
 
