@@ -1,9 +1,9 @@
-//src/app/quest-edit-dialog/quest-edit-dialog.component.scss
+//src/app/quest-dialog/quest-dialog.component.scss
 
 @use '@angular/material' as mat;
 
 $save-button-color: #005AFF;
-$cancel-button-color: red;
+$cancel-button-color: #6b6b6b;
 
 .dialog-container {
   .cancel-button {
@@ -26,7 +26,11 @@ $cancel-button-color: red;
     }
 
     textarea {
-      min-height: 50px;
+      min-height: 25px;
+    }
+
+    .required {
+      color: red;
     }
   }
 }
